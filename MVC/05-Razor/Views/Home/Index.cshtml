@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    string ad = "Said";
+}
+@{
+    // Explicit Expressions
+    var helloworld = "Merhaba Dünya";
+}
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>@ad</p>
+    <p>@helloworld</p>
+    <p>@DateTime.Now.ToLongTimeString()</p>
+    <p>@Html.Raw(helloworld)</p>
+
+    @{
+        var sum = 32 + 10;
+        var greeting = "Hello World";
+        var text = "";
+        @*
+        Burası bir razor server side yorumu
+        *@
+        //
+        <hr/>
+        <p>Bir Html p etiketi ve <b>Kalın</b>ifadesi kullanımı</p>
+
+        for(int i = 0; i < 5; i++)
+        {
+            <h3>Merhaba YZL5101</h3>
+            text = greeting + "Sonuc: " + sum + "<br/>";
+        }
+        if(DateTime.Now.Year != 2025)
+        {
+            <span style="color:red">2025 yılına henüz girmedik</span>
+        }
+        else
+        {
+            <span style="color:darkturquoise">Kampanyanın Bitmesine 1 Yıl Kaldı</span>
+        }
+        // data kaynağı
+        List<string> names = new List<string>()
+        {
+            "C# Öğren",
+            "HTML Öğren",
+            "Sql Öğren",
+            "Asp.Net Öğren",
+            "Css Öğren"
+        };
+        <p>@text</p>
+
+        <ul>
+            @foreach(string name in names)
+            {
+                <li>name:@name</li>
+            }
+        </ul>
+    }
+
+</div>

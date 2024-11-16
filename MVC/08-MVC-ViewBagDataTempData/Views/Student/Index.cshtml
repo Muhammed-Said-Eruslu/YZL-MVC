@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Index</h1>
+<h2>View Bag Kullanımı</h2> @*ViewBagı canta olarak düşünebiliriz*@
+<h3>@ViewBag.baslık</h3> 
+
+
+<ul>
+    @foreach (var itemm in ViewBag.students)
+    {
+        <li>@itemm</li>
+    }
+</ul>
+<hr />
+<h2>View Data Kulllanımı</h2>
+<h3>@ViewData["Başlık"]</h3>,
+
+<ul>
+    @foreach (var itemm in ViewData["students"] as List<string>)
+    {
+        <li>@itemm</li>
+    }
+</ul>
+<hr />
+
+<h2>Temp Data Kullanımı</h2>
+<h3>@TempData["Baslik"]</h3>
+
+<ul>
+    @foreach (var itemm in TempData["students"] as List<string>) @*bilincli olarka cast gerekır cunku object tıpınde tutar *@
+    {
+        <li>@itemm</li>
+    }
+</ul>
